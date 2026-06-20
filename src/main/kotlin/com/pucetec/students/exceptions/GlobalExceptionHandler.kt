@@ -16,8 +16,8 @@ class GlobalExceptionHandler {
             source = "StudentService"
         )
         return ResponseEntity
-            .status(status = HttpStatus.BAD_REQUEST)
-            .body(body = response)
+            .status(HttpStatus.BAD_REQUEST)
+            .body(response)
     }
 
     @ExceptionHandler(StudentNotFoundException::class)

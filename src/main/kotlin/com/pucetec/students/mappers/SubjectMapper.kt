@@ -15,5 +15,5 @@ fun Subject.toResponse() = SubjectResponse(
     id = this.id,
     name = this.name,
     code = this.code,
-    professor = this.professor.toResponse()
+    professorId = this.professor.toResponse()
 )

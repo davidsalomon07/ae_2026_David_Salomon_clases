@@ -1,0 +1,493 @@
+{
+	"info": {
+		"_postman_id": "7f0a8d6b-31d6-4e58-9b1b-64817a3a8b2a",
+		"name": "Students API (David Salomon)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Students",
+			"item": [
+				{
+					"name": "1. Crear Estudiante",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"David Salomon\",\n  \"email\": \"ldsalomon@puce.edu.ec\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8787/api/students",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"api",
+								"students"
+							]
+						}
+					}
+				},
+				{
+					"name": "2. Obtener Todos los Estudiantes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8787/api/students",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"api",
+								"students"
+							]
+						}
+					}
+				},
+				{
+					"name": "3. Obtener Estudiante por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8787/api/students/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"api",
+								"students",
+								"1"
+							]
+						}
+					}
+				},
+				{
+					"name": "4. Actualizar Estudiante",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Sebastian\",\n  \"email\": \"sebastian@puce.edu.ec\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8787/api/students/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"api",
+								"students",
+								"1"
+							]
+						}
+					}
+				},
+				{
+					"name": "5. Eliminar Estudiante",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8787/api/students/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"api",
+								"students",
+								"1"
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Professors",
+			"item": [
+				{
+					"name": "6. Crear Profesor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Prof. Josu\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8787/api/professors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"api",
+								"professors"
+							]
+						}
+					}
+				},
+				{
+					"name": "7. Obtener Todos los Profesores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8787/api/professors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"api",
+								"professors"
+							]
+						}
+					}
+				},
+				{
+					"name": "8. Obtener Profesor por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8787/api/professors/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"api",
+								"professors",
+								"1"
+							]
+						}
+					}
+				},
+				{
+					"name": "9. Actualizar Profesor",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Prof. Sebastian\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8787/api/professors/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"api",
+								"professors",
+								"1"
+							]
+						}
+					}
+				},
+				{
+					"name": "10. Eliminar Profesor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8787/api/professors/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"api",
+								"professors",
+								"1"
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Subjects",
+			"item": [
+				{
+					"name": "11. Crear Materia",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Base de Datos II\",\n  \"code\": \"BD2-202\",\n  \"professorId\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8787/api/subjects",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"api",
+								"subjects"
+							]
+						}
+					}
+				},
+				{
+					"name": "12. Obtener Todas las Materias",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8787/api/subjects",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"api",
+								"subjects"
+							]
+						}
+					}
+				},
+				{
+					"name": "13. Obtener Materia por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8787/api/subjects/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"api",
+								"subjects",
+								"1"
+							]
+						}
+					}
+				},
+				{
+					"name": "14. Actualizar Materia",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Base de Datos Avanzada\",\n  \"code\": \"BD2-300\",\n  \"professorId\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8787/api/subjects/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"api",
+								"subjects",
+								"1"
+							]
+						}
+					}
+				},
+				{
+					"name": "15. Eliminar Materia",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8787/api/subjects/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"api",
+								"subjects",
+								"1"
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Enrollments",
+			"item": [
+				{
+					"name": "16. Crear Inscripción",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"studentId\": 1,\n  \"subjectId\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8787/api/enrollments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"api",
+								"enrollments"
+							]
+						}
+					}
+				},
+				{
+					"name": "17. Obtener Todas las Inscripciones",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8787/api/enrollments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"api",
+								"enrollments"
+							]
+						}
+					}
+				},
+				{
+					"name": "18. Obtener Inscripción por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8787/api/enrollments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"api",
+								"enrollments",
+								"1"
+							]
+						}
+					}
+				},
+				{
+					"name": "19. Actualizar Inscripción",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"status\": \"APROBADO\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8787/api/enrollments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"api",
+								"enrollments",
+								"1"
+							]
+						}
+					}
+				},
+				{
+					"name": "20. Eliminar Inscripción",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8787/api/enrollments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"api",
+								"enrollments",
+								"1"
+							]
+						}
+					}
+				}
+			]
+		}
+	]
+}

@@ -2,6 +2,7 @@ package com.pucetec.students.services
 
 import com.pucetec.students.dto.StudentRequest
 import com.pucetec.students.dto.StudentResponse
+import com.pucetec.students.entities.Student
 import com.pucetec.students.mappers.toEntity
 import com.pucetec.students.mappers.toResponse
 import com.pucetec.students.repositories.StudentRepository

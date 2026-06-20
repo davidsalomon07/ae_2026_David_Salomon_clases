@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RestControllerAdvice
 class GlobalExceptionHandler {
     @ExceptionHandler(BlankNameException::class)
     fun handleBlankNameException(
-        e: BlankMesaggeException
-    ): ResponseEntity<ExceptionResponse> {
-        val response = ExceptionResponse(
+        e: BlankNameException
+    ): ResponseEntity<ExceptionMessage> {
+        val response = ExceptionMessage(
             message = e.message ?: "Nombre en blanco - ERROR",
             source = "StudentService"
         )
@@ -27,6 +27,32 @@ class GlobalExceptionHandler {
         val response = ExceptionMessage(
             message = e.message ?: "Estudiante no encontrado",
             source = "StudentService"
+        )
+        return ResponseEntity
+            .status(HttpStatus.NOT_FOUND)
+            .body(response)
+    }
+
+    @ExceptionHandler(ProfessorNotFound::class)
+    fun handleProfessorNotFoundException(
+        e: ProfessorNotFound
+    ): ResponseEntity<ExceptionMessage> {
+        val response = ExceptionMessage(
+            message = e.message ?: "Profesor no encontrado",
+            source = "ProfessorService"
+        )
+        return ResponseEntity
+            .status(HttpStatus.NOT_FOUND)
+            .body(response)
+    }
+
+    @ExceptionHandler(SubjectNotFound::class)
+    fun handleSubjectNotFoundException(
+        e: SubjectNotFound
+    ): ResponseEntity<ExceptionMessage> {
+        val response = ExceptionMessage(
+            message = e.message ?: "Materia no encontrada",
+            source = "SubjectService"
         )
         return ResponseEntity
             .status(HttpStatus.NOT_FOUND)

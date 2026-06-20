@@ -8,7 +8,7 @@ import com.pucetec.students.entities.Student
 import com.pucetec.students.entities.Subject
 
 fun EnrollmentRequest.toEntity(student: Student, subject: Subject) = Enrollment(
-    status = "ACTIVE",
+    status = "INSCRITO",
     student = student,
     subject = subject,
 )

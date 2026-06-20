@@ -58,6 +58,19 @@ class GlobalExceptionHandler {
             .status(HttpStatus.NOT_FOUND)
             .body(response)
     }
+
+    @ExceptionHandler(EnrollmentNotFound::class)
+    fun handleEnrollmentNotFoundException(
+        e: EnrollmentNotFound
+    ): ResponseEntity<ExceptionMessage> {
+        val response = ExceptionMessage(
+            message = e.message ?: "Inscripción no encontrada",
+            source = "EnrollmentService"
+        )
+        return ResponseEntity
+            .status(HttpStatus.NOT_FOUND)
+            .body(response)
+    }
 }
 
 data class ExceptionMessage(

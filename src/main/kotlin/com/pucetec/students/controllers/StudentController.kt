@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.* // Import necesario para @PathVariable y @GetMapping
 
 @RestController
+@RequestMapping("/api/students")
 open class StudentController(
     val studentService: StudentService
 ) {
@@ -16,6 +17,7 @@ open class StudentController(
     private val logger = LoggerFactory.getLogger(StudentController::class.java)
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     fun createStudent(
         @RequestBody
         request: StudentRequest
@@ -24,15 +26,36 @@ open class StudentController(
         return studentService.createStudent(request)
     }
 
-    @GetMapping("/api/students")
+    @GetMapping
     open fun getAllStudents(): List<StudentResponse> {
         logger.info("Getting all students")
+        return studentService.getAllStudents()
     }
 
-    @GetMapping("/api/students/{id}")
+    @GetMapping("/{id}")
     fun getStudentById(
         @PathVariable
         id: Long
-    ): StudentResponse{
-    logger.info("Getting student by id $id")}
+    ): StudentResponse {
+        logger.info("Getting student by id $id")
+        return studentService.getStudentById(id)
+    }
+
+    @PutMapping("/{id}")
+    fun updateStudent(
+        @PathVariable id: Long,
+        @RequestBody request: StudentRequest
+    ): StudentResponse {
+        logger.info("Updating student by id $id")
+        return studentService.updateStudent(id, request)
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    fun deleteStudent(
+        @PathVariable id: Long
+    ) {
+        logger.info("Deleting student by id $id")
+        studentService.deleteStudent(id)
+    }
 }

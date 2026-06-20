@@ -53,4 +53,31 @@ class StudentService(
         }
         return student.toResponse()
     }
+
+    fun updateStudent(id: Long, request: StudentRequest): StudentResponse {
+        logger.info("Updating student by id $id")
+        studentRepository.findById(id).orElseThrow {
+            StudentNotFoundException("Estudainte $id no encontrado")
+        }
+        
+        if (request.name.isBlank()) {
+            throw BlankNameException(message = "Name cannot be blank")
+        }
+
+        val updatedStudent = Student(
+            id = id,
+            name = request.name,
+            email = request.email
+        )
+        
+        return studentRepository.save(updatedStudent).toResponse()
+    }
+
+    fun deleteStudent(id: Long) {
+        logger.info("Deleting student by id $id")
+        val student = studentRepository.findById(id).orElseThrow {
+            StudentNotFoundException("Estudainte $id no encontrado")
+        }
+        studentRepository.delete(student)
+    }
 }

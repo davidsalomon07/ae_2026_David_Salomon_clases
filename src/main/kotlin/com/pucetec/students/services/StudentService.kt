@@ -32,23 +32,25 @@ class StudentService(
             //retomar response
             return savedStudent.toResponse()
         }
-
-
-        return savedStudent.toResponse()
-    }
-
-    fun getStudentById(id: Long): StudentResponse {
-        logger.info("Getting student by id: $id")
-
-        val student = studentRepository.findById(id)
-            .orElseThrow { StudentNotFoundException("No se encontró el estudiante con ID: $id") }
-
-
-        return student.toResponse()
     }
 
     fun getAllStudents(): List<StudentResponse> {
+        logger.info("Getting all students")
 
-        return studentRepository.findAll().map { it.toResponse() }
+        // consultar todos los estudiantes
+        val savedStudents = studentRepository.findAll() // lista de estudiantes o un arreglo vacio
+
+        //convertir al response adecuado
+        return savedStudents.map {
+            it.toResponse()
+        }
+    }
+
+    fun getStudentById(id: Long): StudentResponse {
+        logger.info("Getting student by id $id")
+        val student = studentRepository.findById(id).orElseThrow {
+            StudentNotFoundException("Estudainte $id no encontrado")
+        }
+        return student.toResponse()
     }
 }

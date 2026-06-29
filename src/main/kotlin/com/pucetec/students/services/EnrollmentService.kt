@@ -21,6 +21,7 @@ class EnrollmentService(
     private val studentRepository: StudentRepository,
     private val subjectRepository: SubjectRepository
 ) {
+    // Logger para registrar las operaciones de inscripciones
     private val logger = LoggerFactory.getLogger(EnrollmentService::class.java)
 
     fun createEnrollment(request: EnrollmentRequest): EnrollmentResponse {

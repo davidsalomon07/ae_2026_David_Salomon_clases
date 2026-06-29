@@ -50,7 +50,7 @@ class StudentService(
     fun getStudentById(id: Long): StudentResponse {
         logger.info("Getting student by id $id")
         val student = studentRepository.findById(id).orElseThrow {
-            StudentNotFoundException("Estudainte $id no encontrado")
+            StudentNotFoundException("Estudiante $id no encontrado")
         }
         return student.toResponse()
     }
@@ -58,7 +58,7 @@ class StudentService(
     fun updateStudent(id: Long, request: StudentRequest): StudentResponse {
         logger.info("Updating student by id $id")
         studentRepository.findById(id).orElseThrow {
-            StudentNotFoundException("Estudainte $id no encontrado")
+            StudentNotFoundException("Estudiante $id no encontrado")
         }
         
         if (request.name.isBlank()) {
@@ -77,7 +77,7 @@ class StudentService(
     fun deleteStudent(id: Long) {
         logger.info("Deleting student by id $id")
         val student = studentRepository.findById(id).orElseThrow {
-            StudentNotFoundException("Estudainte $id no encontrado")
+            StudentNotFoundException("Estudiante $id no encontrado")
         }
         studentRepository.delete(student)
     }

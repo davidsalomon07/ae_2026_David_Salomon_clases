@@ -29,7 +29,7 @@ class SubjectService (
         }
 
         val professor = professorRepository.findById(request.professorId).orElseThrow {
-            ProfessorNotFound(message = "Professor con id: ${request.professorId} no encontrado")
+            ProfessorNotFound(message = "Profesor con id: ${request.professorId} no encontrado")
         }
 
         val subjectEntity = Subject(
@@ -70,7 +70,7 @@ class SubjectService (
         }
 
         val professor = professorRepository.findById(request.professorId).orElseThrow {
-            ProfessorNotFound(message = "Professor con id: ${request.professorId} no encontrado")
+            ProfessorNotFound(message = "Profesor con id: ${request.professorId} no encontrado")
         }
 
         val updatedSubject = Subject(

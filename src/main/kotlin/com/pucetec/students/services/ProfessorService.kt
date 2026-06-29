@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service
 class ProfessorService(
     private val professorRepository: ProfessorRepository
 ) {
+    // Logger para registrar las operaciones de profesores
     private val logger = LoggerFactory.getLogger(ProfessorService::class.java)
 
     fun createProfessor(request: ProfessorRequest): ProfessorResponse {
